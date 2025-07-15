@@ -36,7 +36,7 @@ const UrlForm = () => {
 
   return (
     <div className="space-y-6">
-        <div className="relative">
+        <div className="relative w-full">
           <label htmlFor="url" className="flex items-center text-sm font-semibold text-gray-800 mb-2">
             <span className="mr-2">🔗</span>
             Enter your URL
@@ -57,9 +57,7 @@ const UrlForm = () => {
           className="w-full bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 hover:from-purple-600 hover:via-pink-600 hover:to-red-600 text-white py-3 px-6 rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl transform hover:scale-[1.02] transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-purple-300 disabled:opacity-50 disabled:cursor-not-allowed"
         >
           <span className="flex items-center justify-center">
-            <span className="mr-2">⚡</span>
             Shorten URL
-            <span className="ml-2">⚡</span>
           </span>
         </button>
          {error && (

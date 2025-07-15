@@ -31,7 +31,6 @@ const Navbar = () => {
             <Link to="/" className="text-xl font-bold text-white hover:text-yellow-300 transition-colors duration-300 flex items-center">
               <span className="mr-2">🔗</span>
               URL Shortener
-              <span className="ml-2">✨</span>
             </Link>
           </div>
           
@@ -53,7 +52,7 @@ const Navbar = () => {
                    transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
                 >
                   <span className="flex items-center">
-                    <span className="mr-1 sm:mr-2">🚪</span>
+                    <span className="mr-1 sm:mr-2"></span>
                     <span className="hidden sm:inline">Logout</span>
                     <span className="sm:hidden">Out</span>
                   </span>
