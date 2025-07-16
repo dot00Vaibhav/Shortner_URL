@@ -91,9 +91,19 @@ const UserUrl = () => {
                 </td>
                 <td className="px-6 py-4">
                   <div className="text-sm text-primary">
-                    <span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-blue-100 text-blue-800">
-                      {url.clicks} {url.clicks === 1 ? 'click' : 'clicks'}
-                    </span>
+                    <div className="flex items-center justify-center">
+                      <span className="relative inline-flex items-center px-3 py-1.5 text-xs font-bold rounded-full bg-gradient-to-r from-blue-500 to-blue-600 text-white shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">
+                        <svg className="w-3 h-3 mr-1.5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M10 12a2 2 0 100-4 2 2 0 000 4z"/>
+                          <path fillRule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clipRule="evenodd"/>
+                        </svg>
+                        <span className="font-extrabold text-sm">{url.clicks}</span>
+                        <span className="ml-1 text-xs opacity-90">{url.clicks === 1 ? 'click' : 'clicks'}</span>
+                        {url.clicks > 0 && (
+                          <span className="absolute -top-1 -right-1 w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
+                        )}
+                      </span>
+                    </div>
                   </div>
                 </td>
                 <td className="px-6 py-4 text-sm font-medium">
