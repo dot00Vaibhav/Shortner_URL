@@ -1,5 +1,30 @@
 @import "tailwindcss";
 
+/* Dark mode CSS variables */
+:root {
+  --bg-primary: #f8fafc;
+  --bg-secondary: #ffffff;
+  --bg-tertiary: #f1f5f9;
+  --text-primary: #1e293b;
+  --text-secondary: #475569;
+  --text-accent: #2563eb;
+  --border-primary: #e2e8f0;
+  --border-accent: #3b82f6;
+  --shadow-color: rgba(59, 130, 246, 0.2);
+}
+
+[data-theme="dark"] {
+  --bg-primary: #0f172a;
+  --bg-secondary: #1e293b;
+  --bg-tertiary: #334155;
+  --text-primary: #f1f5f9;
+  --text-secondary: #cbd5e1;
+  --text-accent: #60a5fa;
+  --border-primary: #475569;
+  --border-accent: #3b82f6;
+  --shadow-color: rgba(96, 165, 250, 0.3);
+}
+
 /* Custom animations and responsive enhancements */
 @keyframes float {
   0%, 100% { transform: translateY(0px); }
@@ -90,36 +115,178 @@ html {
 /* Custom navbar styling */
 nav {
   position: fixed !important;
-  top: 20px !important;
+  top: 15px !important;
   left: 50% !important;
   transform: translateX(-50%) !important;
-  width: calc(100% - 40px) !important;
+  width: calc(100% - 20px) !important;
   max-width: 1200px !important;
-  border-radius: 20px !important;
-  box-shadow: 0 8px 32px rgba(59, 130, 246, 0.2) !important;
+  border-radius: 16px !important;
+  box-shadow: 0 8px 32px var(--shadow-color) !important;
   z-index: 1000 !important;
   backdrop-filter: blur(10px) !important;
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" fill="none"><defs><linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" style="stop-color:%23dbeafe;stop-opacity:1" /><stop offset="50%" style="stop-color:%23bfdbfe;stop-opacity:1" /><stop offset="100%" style="stop-color:%23dbeafe;stop-opacity:1" /></linearGradient></defs><rect width="1000" height="100" fill="url(%23grad)"/><circle cx="100" cy="20" r="3" fill="%23ffffff" opacity="0.6"/><circle cx="300" cy="60" r="2" fill="%23ffffff" opacity="0.4"/><circle cx="700" cy="30" r="2.5" fill="%23ffffff" opacity="0.5"/><circle cx="900" cy="70" r="2" fill="%23ffffff" opacity="0.3"/></svg>') !important;
-  background-size: cover !important;
-  background-position: center !important;
-  background-repeat: no-repeat !important;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+/* Mobile navbar adjustments */
+@media (max-width: 480px) {
+  nav {
+    top: 8px !important;
+    width: calc(100% - 12px) !important;
+    border-radius: 12px !important;
+  }
+
+  nav .max-w-7xl {
+    padding-left: 8px !important;
+    padding-right: 8px !important;
+  }
+
+  nav .flex.justify-between {
+    gap: 4px !important;
+  }
+}
+
+/* Extra small devices (BlackBerry Z30, etc.) */
+@media (max-width: 380px) {
+  nav {
+    top: 5px !important;
+    width: calc(100% - 8px) !important;
+    border-radius: 10px !important;
+  }
+
+  nav .max-w-7xl {
+    padding-left: 6px !important;
+    padding-right: 6px !important;
+  }
+
+  nav .h-14 {
+    height: 48px !important;
+  }
 }
 
 /* Adjust body padding to account for fixed navbar */
 body {
-  padding-top: 100px;
-  background-color: #f8fafc !important;
+  padding-top: 90px;
+  background-color: var(--bg-primary) !important;
+  color: var(--text-primary) !important;
   min-height: 100vh;
+  max-height: 100vh;
+  overflow-x: hidden;
+  transition: background-color 0.5s cubic-bezier(0.4, 0, 0.2, 1), color 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Ensure main content background extends behind navbar */
 html {
-  background-color: #f8fafc !important;
+  background-color: var(--bg-primary) !important;
+  overflow-x: hidden;
+  transition: background-color 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Override any page-specific backgrounds to extend behind navbar */
 .min-h-screen {
-  background-color: #f8fafc !important;
+  background-color: var(--bg-primary) !important;
   padding-top: 0 !important;
   margin-top: 0 !important;
+  min-height: calc(100vh - 90px) !important;
+  max-height: calc(100vh - 90px) !important;
+  overflow-y: auto;
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 480px) {
+  body {
+    padding-top: 75px;
+  }
+
+  .min-h-screen {
+    min-height: calc(100vh - 75px) !important;
+    max-height: calc(100vh - 75px) !important;
+  }
+}
+
+/* BlackBerry Z30 and similar devices (360px width) */
+@media (max-width: 380px) {
+  body {
+    padding-top: 70px;
+  }
+
+  .min-h-screen {
+    min-height: calc(100vh - 70px) !important;
+    max-height: calc(100vh - 70px) !important;
+    padding: 8px !important;
+  }
+
+  /* Ensure containers don't overflow */
+  .max-w-lg {
+    max-width: calc(100vw - 24px) !important;
+  }
+
+  .max-w-md {
+    max-width: calc(100vw - 24px) !important;
+  }
+
+  /* Reduce padding on small screens */
+  .p-8 {
+    padding: 16px !important;
+  }
+
+  .px-8 {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+}
+
+/* Dark mode utility classes with smooth transitions */
+.bg-primary {
+  background-color: var(--bg-primary) !important;
+  transition: background-color 0.5s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.bg-secondary {
+  background-color: var(--bg-secondary) !important;
+  transition: background-color 0.5s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.bg-tertiary {
+  background-color: var(--bg-tertiary) !important;
+  transition: background-color 0.5s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.text-primary {
+  color: var(--text-primary) !important;
+  transition: color 0.5s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.text-secondary {
+  color: var(--text-secondary) !important;
+  transition: color 0.5s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.text-accent {
+  color: var(--text-accent) !important;
+  transition: color 0.5s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.border-primary {
+  border-color: var(--border-primary) !important;
+  transition: border-color 0.5s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.border-accent {
+  border-color: var(--border-accent) !important;
+  transition: border-color 0.5s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+/* Dark mode navbar styling */
+nav {
+  background-color: var(--bg-secondary) !important;
+  border-color: var(--border-accent) !important;
+  box-shadow: 0 8px 32px var(--shadow-color) !important;
+}
+
+/* Smooth transitions for all elements */
+* {
+  transition: background-color 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+              color 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+              border-color 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+              box-shadow 0.5s cubic-bezier(0.4, 0, 0.2, 1) !important;
 }

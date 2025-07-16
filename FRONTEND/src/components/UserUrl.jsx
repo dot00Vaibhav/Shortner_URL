@@ -38,8 +38,8 @@ const UserUrl = () => {
 
   if (!urls.urls || urls.urls.length === 0) {
     return (
-      <div className="text-center text-blue-500 my-6 p-4 bg-blue-50 rounded-lg border border-blue-200">
-        <svg className="w-12 h-12 mx-auto text-blue-400 mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <div className="text-center text-secondary my-6 p-4 bg-tertiary rounded-lg border border-primary">
+        <svg className="w-12 h-12 mx-auto text-secondary mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
         </svg>
         <p className="text-lg font-medium">No URLs found</p>
@@ -49,31 +49,31 @@ const UserUrl = () => {
   }
 
   return (
-    <div className="bg-white rounded-lg mt-5 shadow-md overflow-hidden border border-blue-200">
+    <div className="bg-secondary rounded-lg mt-5 shadow-md overflow-hidden border border-primary">
 
       <div className="overflow-x-auto h-56">
-        <table className="min-w-full divide-y divide-blue-200">
-          <thead className="bg-blue-50">
+        <table className="min-w-full divide-y divide-primary">
+          <thead className="bg-tertiary">
             <tr>
-              <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-blue-700 uppercase tracking-wider">
+              <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-primary uppercase tracking-wider">
                 Original URL
               </th>
-              <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-blue-700 uppercase tracking-wider">
+              <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-primary uppercase tracking-wider">
                 Short URL
               </th>
-              <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-blue-700 uppercase tracking-wider">
+              <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-primary uppercase tracking-wider">
                 Clicks
               </th>
-              <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-blue-700 uppercase tracking-wider">
+              <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-primary uppercase tracking-wider">
                 Actions
               </th>
             </tr>
           </thead>
-          <tbody className="bg-white divide-y divide-blue-200">
+          <tbody className="bg-secondary divide-y divide-primary">
             {urls.urls.reverse().map((url) => (
-              <tr key={url._id} className="hover:bg-blue-50">
+              <tr key={url._id} className="hover:bg-tertiary">
                 <td className="px-6 py-4">
-                  <div className="text-sm text-blue-900 truncate max-w-xs">
+                  <div className="text-sm text-primary truncate max-w-xs">
                     {url.full_url}
                   </div>
                 </td>
@@ -83,14 +83,14 @@ const UserUrl = () => {
                       href={`${import.meta.env.VITE_BACKEND_URL}/${url.short_url}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-blue-600 hover:text-blue-800 hover:underline"
+                      className="text-accent hover:text-blue-800 hover:underline"
                     >
                       {`${import.meta.env.VITE_BACKEND_URL.split('//')[1]}/${url.short_url}`}
                     </a>
                   </div>
                 </td>
                 <td className="px-6 py-4">
-                  <div className="text-sm text-blue-900">
+                  <div className="text-sm text-primary">
                     <span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-blue-100 text-blue-800">
                       {url.clicks} {url.clicks === 1 ? 'click' : 'clicks'}
                     </span>

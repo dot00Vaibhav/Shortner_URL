@@ -32,12 +32,12 @@ const LoginForm = ({ state }) => {
 
     return (
         <div className="w-full max-w-md mx-auto">
-            <div className="bg-white shadow-2xl rounded-2xl px-8 pt-8 pb-8 mb-4 border border-blue-200">
-                <div className="text-center mb-8">
-                    <h2 className="text-3xl font-bold text-blue-600">
+            <div className="bg-secondary shadow-2xl rounded-2xl px-4 sm:px-8 pt-6 sm:pt-8 pb-6 sm:pb-8 mb-4 border border-primary">
+                <div className="text-center mb-6 sm:mb-8">
+                    <h2 className="text-2xl sm:text-3xl font-bold text-accent">
                         🔐 Welcome Back!
                     </h2>
-                    <p className="text-blue-600 mt-2">Sign in to your account</p>
+                    <p className="text-accent mt-2 text-sm sm:text-base">Sign in to your account</p>
                 </div>
 
                 {error && (
@@ -50,12 +50,12 @@ const LoginForm = ({ state }) => {
                 )}
 
                 <div className="mb-6">
-                    <label className="flex items-center text-sm font-semibold text-blue-800 mb-2" htmlFor="email">
+                    <label className="flex items-center text-sm font-semibold text-primary mb-2" htmlFor="email">
                         <span className="mr-2">📧</span>
                         Email
                     </label>
                     <input
-                        className="w-full px-4 py-3 border-2 border-blue-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300 bg-blue-50 hover:bg-white text-blue-900 placeholder-blue-400"
+                        className="w-full px-4 py-3 border-2 border-primary rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-accent transition-all duration-300 bg-tertiary hover:bg-secondary text-primary placeholder-secondary"
                         id="email"
                         type="email"
                         placeholder="Enter your email"
@@ -66,12 +66,12 @@ const LoginForm = ({ state }) => {
                 </div>
 
                 <div className="mb-8">
-                    <label className="flex items-center text-sm font-semibold text-blue-800 mb-2" htmlFor="password">
+                    <label className="flex items-center text-sm font-semibold text-primary mb-2" htmlFor="password">
                         <span className="mr-2">🔒</span>
                         Password
                     </label>
                     <input
-                        className="w-full px-4 py-3 border-2 border-blue-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300 bg-blue-50 hover:bg-white text-blue-900 placeholder-blue-400"
+                        className="w-full px-4 py-3 border-2 border-primary rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-accent transition-all duration-300 bg-tertiary hover:bg-secondary text-primary placeholder-secondary"
                         id="password"
                         type="password"
                         placeholder="Enter your password"
@@ -95,11 +95,11 @@ const LoginForm = ({ state }) => {
                 </div>
 
                 <div className="text-center">
-                    <p className="text-sm text-blue-600">
+                    <p className="text-sm text-secondary">
                         Don't have an account?
                         <span
                             onClick={() => state(false)}
-                            className="ml-1 text-blue-700 hover:text-blue-800 font-semibold cursor-pointer transition-colors duration-300"
+                            className="ml-1 text-accent hover:text-blue-800 font-semibold cursor-pointer transition-colors duration-300"
                         >
                             Register here!
                         </span>

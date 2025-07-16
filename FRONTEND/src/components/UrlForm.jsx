@@ -37,7 +37,7 @@ const UrlForm = () => {
   return (
     <div className="space-y-6">
         <div className="relative w-full">
-          <label htmlFor="url" className="flex items-center text-sm font-semibold text-blue-800 mb-2">
+          <label htmlFor="url" className="flex items-center text-sm font-semibold text-primary mb-2">
             <span className="mr-2">🔗</span>
             Enter your URL
           </label>
@@ -48,7 +48,7 @@ const UrlForm = () => {
             onInput={(event)=>setUrl(event.target.value)}
             placeholder="https://example.com"
             required
-            className="w-full px-4 py-3 border-2 border-blue-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300 bg-blue-50 hover:bg-white text-blue-900 placeholder-blue-400"
+            className="w-full px-4 py-3 border-2 border-primary rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-accent transition-all duration-300 bg-tertiary hover:bg-secondary text-primary placeholder-secondary"
           />
         </div>
         <button
@@ -70,7 +70,7 @@ const UrlForm = () => {
         )}
         {isAuthenticated && (
           <div className="relative">
-            <label htmlFor="customSlug" className="flex items-center text-sm font-semibold text-blue-800 mb-2">
+            <label htmlFor="customSlug" className="flex items-center text-sm font-semibold text-primary mb-2">
               <span className="mr-2">🎯</span>
               Custom URL (optional)
             </label>
@@ -80,13 +80,13 @@ const UrlForm = () => {
               value={customSlug}
               onChange={(event) => setCustomSlug(event.target.value)}
               placeholder="Enter custom slug"
-              className="w-full px-4 py-3 border-2 border-blue-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300 bg-blue-50 hover:bg-white text-blue-900 placeholder-blue-400"
+              className="w-full px-4 py-3 border-2 border-primary rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-accent transition-all duration-300 bg-tertiary hover:bg-secondary text-primary placeholder-secondary"
             />
           </div>
         )}
         {shortUrl && (
-          <div className="bg-blue-50 p-6 rounded-2xl border-2 border-blue-200 shadow-lg">
-            <h2 className="text-lg font-bold mb-4 text-blue-800 flex items-center">
+          <div className="bg-tertiary p-6 rounded-2xl border-2 border-primary shadow-lg">
+            <h2 className="text-lg font-bold mb-4 text-primary flex items-center">
               <span className="mr-2">🎉</span>
               Your shortened URL:
               <span className="ml-2">🎉</span>
@@ -96,7 +96,7 @@ const UrlForm = () => {
                 type="text"
                 readOnly
                 value={shortUrl}
-                className="flex-1 p-3 border-2 border-blue-200 rounded-xl bg-white text-blue-800 font-mono text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="flex-1 p-3 border-2 border-primary rounded-xl bg-secondary text-primary font-mono text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
                <button
                 onClick={handleCopy}
