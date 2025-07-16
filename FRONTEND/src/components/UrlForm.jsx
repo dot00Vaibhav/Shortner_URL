@@ -37,7 +37,7 @@ const UrlForm = () => {
   return (
     <div className="space-y-6">
         <div className="relative w-full">
-          <label htmlFor="url" className="flex items-center text-sm font-semibold text-gray-800 mb-2">
+          <label htmlFor="url" className="flex items-center text-sm font-semibold text-blue-800 mb-2">
             <span className="mr-2">🔗</span>
             Enter your URL
           </label>
@@ -48,20 +48,20 @@ const UrlForm = () => {
             onInput={(event)=>setUrl(event.target.value)}
             placeholder="https://example.com"
             required
-            className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-300 bg-gray-50 hover:bg-white text-gray-800 placeholder-gray-400"
+            className="w-full px-4 py-3 border-2 border-blue-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300 bg-blue-50 hover:bg-white text-blue-900 placeholder-blue-400"
           />
         </div>
         <button
           onClick={handleSubmit}
           type="submit"
-          className="w-full bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 hover:from-purple-600 hover:via-pink-600 hover:to-red-600 text-white py-3 px-6 rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl transform hover:scale-[1.02] transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-purple-300 disabled:opacity-50 disabled:cursor-not-allowed"
+          className="w-full bg-blue-500 hover:bg-blue-600 text-white py-3 px-6 rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl transform hover:scale-[1.02] transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-blue-300 disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
         >
           <span className="flex items-center justify-center">
             Shorten URL
           </span>
         </button>
          {error && (
-          <div className="p-4 bg-gradient-to-r from-red-100 to-pink-100 text-red-700 rounded-xl border-l-4 border-red-500 shadow-md">
+          <div className="p-4 bg-red-50 text-red-700 rounded-xl border-l-4 border-red-500 shadow-md">
             <div className="flex items-center">
               <span className="mr-2">❌</span>
               <span className="font-medium">{error}</span>
@@ -70,7 +70,7 @@ const UrlForm = () => {
         )}
         {isAuthenticated && (
           <div className="relative">
-            <label htmlFor="customSlug" className="flex items-center text-sm font-semibold text-gray-800 mb-2">
+            <label htmlFor="customSlug" className="flex items-center text-sm font-semibold text-blue-800 mb-2">
               <span className="mr-2">🎯</span>
               Custom URL (optional)
             </label>
@@ -80,13 +80,13 @@ const UrlForm = () => {
               value={customSlug}
               onChange={(event) => setCustomSlug(event.target.value)}
               placeholder="Enter custom slug"
-              className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-300 bg-gray-50 hover:bg-white text-gray-800 placeholder-gray-400"
+              className="w-full px-4 py-3 border-2 border-blue-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300 bg-blue-50 hover:bg-white text-blue-900 placeholder-blue-400"
             />
           </div>
         )}
         {shortUrl && (
-          <div className="bg-gradient-to-r from-green-50 to-blue-50 p-6 rounded-2xl border-2 border-green-200 shadow-lg">
-            <h2 className="text-lg font-bold mb-4 text-gray-800 flex items-center">
+          <div className="bg-blue-50 p-6 rounded-2xl border-2 border-blue-200 shadow-lg">
+            <h2 className="text-lg font-bold mb-4 text-blue-800 flex items-center">
               <span className="mr-2">🎉</span>
               Your shortened URL:
               <span className="ml-2">🎉</span>
@@ -96,14 +96,14 @@ const UrlForm = () => {
                 type="text"
                 readOnly
                 value={shortUrl}
-                className="flex-1 p-3 border-2 border-gray-200 rounded-xl bg-white text-gray-800 font-mono text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="flex-1 p-3 border-2 border-blue-200 rounded-xl bg-white text-blue-800 font-mono text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
                <button
                 onClick={handleCopy}
-                className={`px-6 py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg ${
+                className={`px-6 py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg cursor-pointer ${
                   copied
-                    ? 'bg-gradient-to-r from-green-500 to-green-600 text-white'
-                    : 'bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white'
+                    ? 'bg-green-500 hover:bg-green-600 text-white'
+                    : 'bg-blue-500 hover:bg-blue-600 text-white'
                 }`}
               >
                 <span className="flex items-center justify-center">

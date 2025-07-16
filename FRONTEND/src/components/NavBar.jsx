@@ -23,23 +23,23 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-gradient-to-r from-purple-600 via-blue-600 to-teal-600 shadow-lg border-b-4 border-white/20">
+    <nav className="bg-white shadow-lg border-b-4 border-blue-500">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
           {/* Left side - App Name */}
           <div className="flex items-center">
-            <Link to="/" className="text-xl font-bold text-white hover:text-yellow-300 transition-colors duration-300 flex items-center">
+            <Link to="/" className="text-xl font-bold text-blue-600 hover:text-blue-800 transition-colors duration-300 flex items-center">
               <span className="mr-2">🔗</span>
               URL Shortener
             </Link>
           </div>
-          
+
           {/* Right side - Auth buttons */}
           <div className="flex items-center space-x-3">
             {isAuthenticated ? (
               // Show user info and logout when authenticated
               <div className="flex items-center space-x-2 sm:space-x-4">
-                <span className="text-white font-medium flex items-center text-sm sm:text-base">
+                <span className="text-blue-700 font-medium flex items-center text-sm sm:text-base">
                   <span className="mr-1 sm:mr-2">👋</span>
                   <span className="hidden sm:inline">Welcome, </span>
                   <span className="sm:hidden">Hi, </span>
@@ -47,8 +47,7 @@ const Navbar = () => {
                 </span>
                 <button
                   onClick={handleLogout}
-                  className="bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700
-                   text-white px-4 sm:px-6 py-2 rounded-full text-sm font-medium cursor-pointer
+                  className="bg-red-500 hover:bg-red-600 text-white px-4 sm:px-6 py-2 rounded-full text-sm font-medium cursor-pointer
                    transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
                 >
                   <span className="flex items-center">
@@ -64,14 +63,14 @@ const Navbar = () => {
                 <Link
                   to="/auth"
                   search={{ mode: 'login' }}
-                  className="bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white px-4 sm:px-6 py-2 rounded-full text-sm font-medium transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+                  className="bg-blue-500 hover:bg-blue-600 text-white px-4 sm:px-6 py-2 rounded-full text-sm font-medium transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
                 >
                   Login
                 </Link>
                 <Link
                   to="/auth"
                   search={{ mode: 'register' }}
-                  className="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white px-4 sm:px-6 py-2 rounded-full text-sm font-medium transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+                  className="bg-blue-700 hover:bg-blue-800 text-white px-4 sm:px-6 py-2 rounded-full text-sm font-medium transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
                 >
                   Register
                 </Link>

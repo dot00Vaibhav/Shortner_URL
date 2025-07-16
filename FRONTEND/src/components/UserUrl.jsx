@@ -30,7 +30,7 @@ const UserUrl = () => {
 
   if (isError) {
     return (
-      <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded my-4">
+      <div className="bg-red-50 border border-red-400 text-red-700 px-4 py-3 rounded my-4">
         Error loading your URLs: {error.message}
       </div>
     )
@@ -38,8 +38,8 @@ const UserUrl = () => {
 
   if (!urls.urls || urls.urls.length === 0) {
     return (
-      <div className="text-center text-gray-500 my-6 p-4 bg-gray-50 rounded-lg border border-gray-200">
-        <svg className="w-12 h-12 mx-auto text-gray-400 mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <div className="text-center text-blue-500 my-6 p-4 bg-blue-50 rounded-lg border border-blue-200">
+        <svg className="w-12 h-12 mx-auto text-blue-400 mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
         </svg>
         <p className="text-lg font-medium">No URLs found</p>
@@ -49,48 +49,48 @@ const UserUrl = () => {
   }
 
   return (
-    <div className="bg-white rounded-lg mt-5 shadow-md overflow-hidden">
-      
+    <div className="bg-white rounded-lg mt-5 shadow-md overflow-hidden border border-blue-200">
+
       <div className="overflow-x-auto h-56">
-        <table className="min-w-full divide-y divide-gray-200">
-          <thead className="bg-gray-50">
+        <table className="min-w-full divide-y divide-blue-200">
+          <thead className="bg-blue-50">
             <tr>
-              <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+              <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-blue-700 uppercase tracking-wider">
                 Original URL
               </th>
-              <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+              <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-blue-700 uppercase tracking-wider">
                 Short URL
               </th>
-              <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+              <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-blue-700 uppercase tracking-wider">
                 Clicks
               </th>
-              <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+              <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-blue-700 uppercase tracking-wider">
                 Actions
               </th>
             </tr>
           </thead>
-          <tbody className="bg-white divide-y divide-gray-200">
+          <tbody className="bg-white divide-y divide-blue-200">
             {urls.urls.reverse().map((url) => (
-              <tr key={url._id} className="hover:bg-gray-50">
+              <tr key={url._id} className="hover:bg-blue-50">
                 <td className="px-6 py-4">
-                  <div className="text-sm text-gray-900 truncate max-w-xs">
+                  <div className="text-sm text-blue-900 truncate max-w-xs">
                     {url.full_url}
                   </div>
                 </td>
                 <td className="px-6 py-4">
                   <div className="text-sm">
-                    <a 
-                      href={`${import.meta.env.VITE_BACKEND_URL}/${url.short_url}`} 
-                      target="_blank" 
+                    <a
+                      href={`${import.meta.env.VITE_BACKEND_URL}/${url.short_url}`}
+                      target="_blank"
                       rel="noopener noreferrer"
-                      className="text-blue-600 hover:text-blue-900 hover:underline"
+                      className="text-blue-600 hover:text-blue-800 hover:underline"
                     >
                       {`${import.meta.env.VITE_BACKEND_URL.split('//')[1]}/${url.short_url}`}
                     </a>
                   </div>
                 </td>
                 <td className="px-6 py-4">
-                  <div className="text-sm text-gray-900">
+                  <div className="text-sm text-blue-900">
                     <span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-blue-100 text-blue-800">
                       {url.clicks} {url.clicks === 1 ? 'click' : 'clicks'}
                     </span>
@@ -99,10 +99,10 @@ const UserUrl = () => {
                 <td className="px-6 py-4 text-sm font-medium">
                   <button
                     onClick={() => handleCopy(`${import.meta.env.VITE_BACKEND_URL}/${url.short_url}`, url._id)}
-                    className={`inline-flex items-center px-3 py-1.5 border border-transparent text-xs font-medium rounded-md shadow-sm ${
+                    className={`inline-flex items-center px-3 py-1.5 border border-transparent text-xs font-medium rounded-md shadow-sm cursor-pointer ${
                       copiedId === url._id
-                        ? 'bg-green-600 text-white hover:bg-green-700'
-                        : 'bg-blue-600 text-white hover:bg-blue-700'
+                        ? 'bg-green-500 text-white hover:bg-green-600'
+                        : 'bg-blue-500 text-white hover:bg-blue-600'
                     } focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors duration-200`}
                   >
                     {copiedId === url._id ? (

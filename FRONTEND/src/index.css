@@ -7,14 +7,8 @@
 }
 
 @keyframes pulse-glow {
-  0%, 100% { box-shadow: 0 0 20px rgba(168, 85, 247, 0.4); }
-  50% { box-shadow: 0 0 40px rgba(168, 85, 247, 0.8); }
-}
-
-@keyframes gradient-shift {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  0%, 100% { box-shadow: 0 0 20px rgba(59, 130, 246, 0.4); }
+  50% { box-shadow: 0 0 40px rgba(59, 130, 246, 0.8); }
 }
 
 /* Floating animation for buttons */
@@ -25,12 +19,6 @@
 /* Pulse glow effect */
 .pulse-glow {
   animation: pulse-glow 2s ease-in-out infinite;
-}
-
-/* Gradient animation */
-.gradient-animation {
-  background-size: 200% 200%;
-  animation: gradient-shift 3s ease infinite;
 }
 
 /* Smooth scrolling */
@@ -44,17 +32,17 @@ html {
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: #f8fafc;
   border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(45deg, #667eea, #764ba2);
+  background: #3b82f6;
   border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(45deg, #764ba2, #667eea);
+  background: #2563eb;
 }
 
 /* Responsive text sizing */
@@ -78,15 +66,15 @@ html {
 
 /* Enhanced focus states for accessibility */
 .focus-enhanced:focus {
-  outline: 2px solid #8b5cf6;
+  outline: 2px solid #3b82f6;
   outline-offset: 2px;
 }
 
 /* Glass morphism effect */
 .glass-morphism {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(59, 130, 246, 0.2);
 }
 
 /* Hover effects for interactive elements */
@@ -96,5 +84,42 @@ html {
 
 .hover-lift:hover {
   transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 10px 25px rgba(59, 130, 246, 0.15);
+}
+
+/* Custom navbar styling */
+nav {
+  position: fixed !important;
+  top: 20px !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  width: calc(100% - 40px) !important;
+  max-width: 1200px !important;
+  border-radius: 20px !important;
+  box-shadow: 0 8px 32px rgba(59, 130, 246, 0.2) !important;
+  z-index: 1000 !important;
+  backdrop-filter: blur(10px) !important;
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" fill="none"><defs><linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" style="stop-color:%23dbeafe;stop-opacity:1" /><stop offset="50%" style="stop-color:%23bfdbfe;stop-opacity:1" /><stop offset="100%" style="stop-color:%23dbeafe;stop-opacity:1" /></linearGradient></defs><rect width="1000" height="100" fill="url(%23grad)"/><circle cx="100" cy="20" r="3" fill="%23ffffff" opacity="0.6"/><circle cx="300" cy="60" r="2" fill="%23ffffff" opacity="0.4"/><circle cx="700" cy="30" r="2.5" fill="%23ffffff" opacity="0.5"/><circle cx="900" cy="70" r="2" fill="%23ffffff" opacity="0.3"/></svg>') !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+}
+
+/* Adjust body padding to account for fixed navbar */
+body {
+  padding-top: 100px;
+  background-color: #f8fafc !important;
+  min-height: 100vh;
+}
+
+/* Ensure main content background extends behind navbar */
+html {
+  background-color: #f8fafc !important;
+}
+
+/* Override any page-specific backgrounds to extend behind navbar */
+.min-h-screen {
+  background-color: #f8fafc !important;
+  padding-top: 0 !important;
+  margin-top: 0 !important;
 }
