@@ -37,11 +37,11 @@ const RegisterForm = ({state}) => {
   };
 
   return (
-    <div className="w-full max-w-md mx-auto">
+    <div className="w-full max-w-md mx-auto mt-10">
       <div onSubmit={handleSubmit} className="bg-secondary shadow-2xl rounded-2xl px-4 sm:px-8 pt-6 sm:pt-8 pb-6 sm:pb-8 mb-4 border border-primary">
         <div className="text-center mb-6 sm:mb-8">
           <h2 className="text-2xl sm:text-3xl font-bold text-accent">
-            🎉 Join Us Today!
+            Join Us Today!
           </h2>
           <p className="text-accent mt-2 text-sm sm:text-base">Create your account to get started</p>
         </div>
